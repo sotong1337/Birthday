@@ -20,6 +20,6 @@
 
 # Side note
  I did not test out edge cases cause I'm tired <br>
- Also if you're born on the 29th of frb, the website won't show your upcoming birthday unless it is a leap year, sorry 'bout that<br>
+ Also if you're born on the 29th of Feb, the website won't show your upcoming birthday unless it is a leap year, sorry 'bout that<br>
  Also there's an extremely long-winded and guessy ctf in here if anyone interested :) <br>
  I spent way more than the recommended time on this :( <br>
