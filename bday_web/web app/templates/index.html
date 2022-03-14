@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lan ="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Look, I'm a good friend!</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'stylesheets/style.css') }}">
+</head>
+
+<body>
+    <nav role = "navigation">
+        <div id = "menuToggle">
+            <input type = "checkbox"/>
+            <span></span>
+            <span></span>
+            <span></span>
+            <ul id = "menu">
+                <a href = "{{ url_for('home') }}"><li>Home</li></a>
+                <a href = "{{ url_for('db_view') }}"><li>View Birthdays</li></a>
+                <a href = "{{ url_for('add_profile') }}"><li>Add Profile</li></a>
+                <a href = "{{ url_for('hw') }}"><li>Actual Homework</li></a>
+                <a href = "https://github.com/sotong1337"><li>Github</li></a>
+            </ul>
+        </div>
+    </nav>
+    
+    <svg viewBox = "0 0 2040 1080">
+        {% if bday %}
+        <text class = "svg_txt text_top" x = "50%" y = "10%" fill = "transparent" text-anchor = "middle">
+            <tspan x = "50%" dy = "1em">
+                Happy Birthday!</tspan></text>
+        <text class = "svg_txt text_bottom" x = "50%" y = "37.5%" fill = "transparent" text-anchor = "middle">
+            {% for i in range(n) %}
+            <tspan x = "12.5%" dy = "0.8em" text-anchor = "start">
+                {{ names[i] }}</tspan>
+            {% endfor %}
+            <tspan x = "80%" dy = "0.2em" font-size = "0.5em" stroke = "#39FF14">{{ txt1 }}</tspan>
+        </text>
+        {% else %}
+        <text class = "svg_txt" x = "50%" y = "60%" fill = "transparent" text-anchor = "middle" font-size = "450px">{{ txt1 }}</text>
+        {% endif %}
+    </svg>
+
+    {% if bday %}
+        <ul class = "notes">
+        {% for i in range(n) %}
+            <li class = "notepad">
+                <div class = "top"></div>
+                <div class = "paper">
+                    <h2>{{ names[i] }}<br></h2>
+                    <p style="white-space: pre-line">{{ messages[i] }}</p>
+                </div>
+            </li>
+        {% endfor %}
+        </ul>
+    {% endif %}
+    
+    <h1 class = "upcoming">Upcoming Birthdays</h1>
+    <ul class = "bdays">
+        {% for i in data_lst2 %}
+            <li>{{ i[0] }}: {{ i[1] }}/{{ i[2] }} ({{ i[3] }})</li>
+        {% endfor %}
+    </ul>
+
+</body>
+<script src = "{{ url_for('static', filename = 'static.js') }}"></script>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add new profile</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'stylesheets/data_change.css') }}">
+</head>
+<body>
+
+    <nav role = "navigation">
+        <div id = "menuToggle">
+            <input type = "checkbox"/>
+            <span></span>
+            <span></span>
+            <span></span>
+            <ul id = "menu">
+                <a href = "{{ url_for('home') }}"><li>Home</li></a>
+                <a href = "{{ url_for('db_view') }}"><li>View Birthdays</li></a>
+                <a href = "{{ url_for('add_profile') }}"><li>Add Profile</li></a>
+                <a href = "{{ url_for('hw') }}"><li>Actual Homework</li></a>
+                <a href = "https://github.com/sotong1337"><li>Github</li></a>
+            </ul>
+        </div>
+    </nav>
+
+    <div id = "responses">
+        <div id = "defaultText">
+            <form action = "{{ url_for('add_profile') }}" method = 'POST'>
+                <span class = "in_name">
+                    <input type = "text" name = "name_" autocomplete="off" spellcheck = "false"></input>
+                    <p>Name</p>
+                </span>
+                
+                <div class = "bday">
+                    <div class = "txt">Birthday:</div>
+                    
+                    <div class = "in_day">
+                        <input type="number" id="days" name="days" autocomplete="off" placeholder="Day: 1-31", min="1" max="31" step = "1">
+                    </div>
+
+                    <div class = "slash">/</div>
+
+                    <div class = "in_month">
+                        <input type="number" id="months" name="months" autocomplete="off" placeholder="Month: 1-12" min="1" max="12" step = "1">
+                    </div>
+                </div>
+
+                <div class = "paper">
+                    <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbspNotes</p>
+                    <div class = "lines">
+                        <textarea class = "note_text" spellcheck = "false" name = "message"></textarea>
+                    </div>
+                </div>
+
+                <input type = "submit" class = "fsub g" id = "sub" value = "Add Profile">
+            </form>
+        </div>
+        
+        <p id = "dayAlert" class = "newp"></p>
+        <p id = "monthAlert" class = "newp"></p>
+    </div>
+    
+    </body>
+    <script src = "https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src = "{{ url_for('static', filename = 'date_validate.js') }}"></script>
+    </html>
+</body>
+</html>

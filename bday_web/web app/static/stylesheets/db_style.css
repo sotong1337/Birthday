@@ -1,0 +1,346 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:900i&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #232323;
+    color: #cdcdcd;
+    margin-bottom: 10vh;;
+}
+ 
+#menuToggle {
+    display: block;
+    position: fixed;
+    top: 50px;
+    left: 50px;
+    z-index: 1;
+    -webkit-user-select: none;
+    user-select: none;
+}
+ 
+#menuToggle a {
+    text-decoration: none;
+    color: #232323;
+
+    transition: color 0.3s ease;
+}
+ 
+#menuToggle a:hover{
+    color: tomato;
+}
+ 
+ 
+#menuToggle input {
+    display: block;
+    width: 40px;
+    height: 32px;
+    position: absolute;
+    top: -7px;
+    left: -5px;
+
+    cursor: pointer;
+
+    opacity: 0; 
+    z-index: 2; 
+
+    -webkit-touch-callout: none;
+}
+ 
+#menuToggle span {
+    display: block;
+    width: 33px;
+    height: 4px;
+    margin-bottom: 5px;
+    position: relative;
+    background: #cdcdcd;
+    border-radius: 3px;
+    z-index: 1;
+    transform-origin: 4px 0px;
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0), background-color 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0), opacity 0.55s ease;
+}
+
+#menuToggle span:first-child {
+    transform-origin: 0% 0%;
+}
+ 
+#menuToggle span:nth-last-child(2) {
+    transform-origin: 0% 100%;
+}
+ 
+#menuToggle input:checked ~ span {
+    opacity: 1;
+    transform: rotate(45deg) translate(-2px, -1px);
+    background: #232323;
+}
+ 
+#menuToggle input:checked ~ span:nth-last-child(3) {
+    opacity: 0;
+    transform: rotate(0deg) scale(0.2, 0.2);
+}
+ 
+#menuToggle input:checked ~ span:nth-last-child(2) {
+    transform: rotate(-45deg) translate(0, -1px);
+}
+
+#menu {
+    position: absolute;
+    height: 100vh;
+    width: 300px;
+    margin: -100px 0 0 -50px;
+    padding: 50px;
+    padding-top: 125px;
+
+    background: #ededed;
+    list-style-type: none;
+    -webkit-font-smoothing: antialiased;
+
+    transform-origin: 0% 0%;
+    transform: translate(-100%, 0);
+
+    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+}
+ 
+#menu li {
+    padding: 10px 0;
+    font-size: 22px;
+}
+
+#menuToggle input:checked ~ ul {
+    transform: none;
+}
+  
+.title {
+    position: absolute;
+    width: 80%;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 92px;
+    letter-spacing: 0.1em;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-width: 3px;
+    -webkit-text-stroke-color: #00FFDD;
+    text-shadow: 6px 6px #2FA4FF, 20px 20px #232323;
+    animation: fade_in 3s ease-in-out forwards;
+}
+
+table {
+    background-color: rgb(255, 255, 255, 0.1);
+    position: relative;
+    margin-top: 25vh;
+    left: 10%;
+    width: 80%;
+    border-collapse: collapse;
+    border-bottom: 3px solid #00FFDD;
+}
+
+tr {
+    padding: 20px 0;
+    height: 30px;
+    font-size: 0;
+    position: relative;
+    border-top: 1px solid rgb(255, 255, 255, 0.2);
+    cursor: pointer;
+}
+
+td, th {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    font-size: 16px;
+    font-weight: normal;
+    display: inline-block;
+    width: 15%;
+	box-sizing: border-box;
+    text-align: left;
+}
+
+.table_title {
+    padding: 25px 0 5px 0;
+    height: 45px;
+    font-size: 0;
+    background-color: rgba(255,255,255,0.1);
+    border-left: 3px solid rgba(255, 255, 255, 0.2);
+    cursor: default;
+}
+
+th {
+    padding: 15px 13px;
+}
+
+td {
+    padding: 25px 5px 5px 10px;
+}
+
+.notes{
+    width: 70%;
+}
+
+.name_ a{
+    text-decoration: none;
+    text-align: left;
+}
+
+.m1 {
+    border-left: 3px solid #FF0000;
+    filter: brightness(70%);
+}
+.m1 .name_ a {
+    color: #FF0000;
+}
+.m1:hover {
+    border-left: 3px solid #FF0000;
+    filter: brightness(150%);
+    background: #232323;
+}
+
+.m2 {
+    border-left: 3px solid #FF8700;
+    filter: brightness(70%);
+}
+.m2 .name_ a {
+    color: #FF8700;
+}
+.m2:hover {
+    border-left: 3px solid #FF8700;
+    filter: brightness(150%);
+    background: #232323;
+}
+
+.m3 {
+    border-left: 3px solid #FFD300;
+    filter: brightness(70%);
+}
+.m3 .name_ a {
+    color: #FFD300;
+}
+.m3:hover {
+    border-left: 3px solid #FFD300;
+    filter: brightness(150%);
+    background: #232323;
+}
+
+.m4 {
+    border-left: 3px solid #DEFF0A;
+    filter: brightness(70%);
+}
+.m4 .name_ a {
+    color: #DEFF0A;
+}
+.m4:hover {
+    border-left: 3px solid #DEFF0A;
+    filter: brightness(150%);
+    background: #232323;
+}
+
+.m5 {
+    border-left: 3px solid #A1FF0A;
+    filter: brightness(70%);
+}
+.m5 .name_ a {
+    color: #A1FF0A;
+}
+.m5:hover {
+    border-left: 3px solid #A1FF0A;
+    filter: brightness(150%);
+    background: #232323;
+}
+
+.m6 {
+    border-left: 3px solid #0AFF99;
+    filter: brightness(70%);
+}
+.m6 .name_ a {
+    color: #0AFF99;
+}
+.m6:hover {
+    border-left: 3px solid #0AFF99;
+    filter: brightness(150%);
+    background: #232323;
+}
+
+.m7 {
+    border-left: 3px solid #0AEFFF;
+    filter: brightness(70%);
+}
+.m7 .name_ a {
+    color: #0AEFFF;
+}
+.m7:hover {
+    border-left: 3px solid #0AEFFF;
+    filter: brightness(150%);
+    background: #232323;
+}
+
+.m8 {
+    border-left: 3px solid #00bbf9;
+}
+.m8 .name_ a {
+    color: #00bbf9;
+}
+.m8:hover {
+    border-left: 3px solid #00bbf9;
+    filter: brightness(150%);
+    background: #232323;
+}
+
+.m9 {
+    border-left: 3px solid #2ec4b6;
+    filter: brightness(70%);
+}
+.m9 .name_ a {
+    color: #2ec4b6;
+}
+.m9:hover {
+    border-left: 3px solid #2ec4b6;
+    filter: brightness(150%);
+    background: #232323;
+}
+
+.m10 {
+    border-left: 3px solid #fee440;
+    filter: brightness(70%);
+}
+.m10 .name_ a {
+    color: #fee440;
+}
+.m10:hover {
+    border-left: 3px solid #fee440;
+    filter: brightness(150%);
+    background: #232323;
+}
+
+.m11 {
+    border-left: 3px solid #f15bb5;
+    filter: brightness(70%);
+}
+.m11 .name_ a {
+    color: #f15bb5;
+}
+.m11:hover {
+    border-left: 3px solid #f15bb5;
+    filter: brightness(150%);
+    background: #232323;
+}
+
+.m12 {
+    border-left: 3px solid #9b5de5;
+    filter: brightness(70%);
+}
+.m12 .name_ a {
+    color: #9b5de5;
+}
+.m12:hover {
+    border-left: 3px solid #9b5de5;
+    filter: brightness(150%);
+    background: #232323;
+}
+
+@keyframes fade_in {
+    0% {opacity: 10%;}
+    100% {opacity: 100%;}
+}

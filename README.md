@@ -19,7 +19,9 @@
  The python file used is called helper.py, or you could go to the folder March holi hw for a slightly worse file if you want to grade it <br>
 
 # Side note
+ Not Made to be responsive in any way sshape or form. <br>
  I did not test out edge cases cause I'm tired <br>
  Also if you're born on the 29th of Feb, the website won't show your upcoming birthday unless it is a leap year, sorry 'bout that<br>
- Also there's an extremely long-winded and guessy ctf in here if anyone interested :) <br>
+ Also there's an extremely long-winded and guessy ctf in here if anyone interested :) (supposed to only use the website and not see these files)<br>
+ The rant is not part of the ctf I actually hope it doesn't happen again :( <br>
  I spent way more than the recommended time on this :( <br>

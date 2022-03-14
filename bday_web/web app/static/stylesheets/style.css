@@ -1,0 +1,240 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #232323;
+    color: #cdcdcd;
+    margin-bottom: 10vh;
+}
+ 
+#menuToggle {
+    display: block;
+    position: fixed;
+    top: 50px;
+    left: 50px;
+    z-index: 1;
+    -webkit-user-select: none;
+    user-select: none;
+}
+ 
+#menuToggle a {
+    text-decoration: none;
+    color: #232323;
+
+    transition: color 0.3s ease;
+}
+ 
+#menuToggle a:hover{
+    color: tomato;
+}
+ 
+ 
+#menuToggle input {
+    display: block;
+    width: 40px;
+    height: 32px;
+    position: absolute;
+    top: -7px;
+    left: -5px;
+
+    cursor: pointer;
+
+    opacity: 0; 
+    z-index: 2; 
+
+    -webkit-touch-callout: none;
+}
+ 
+#menuToggle span {
+    display: block;
+    width: 33px;
+    height: 4px;
+    margin-bottom: 5px;
+    position: relative;
+    background: #cdcdcd;
+    border-radius: 3px;
+    z-index: 1;
+    transform-origin: 4px 0px;
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0), background-color 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0), opacity 0.55s ease;
+}
+
+#menuToggle span:first-child {
+    transform-origin: 0% 0%;
+}
+ 
+#menuToggle span:nth-last-child(2) {
+    transform-origin: 0% 100%;
+}
+ 
+#menuToggle input:checked ~ span {
+    opacity: 1;
+    transform: rotate(45deg) translate(-2px, -1px);
+    background: #232323;
+}
+ 
+#menuToggle input:checked ~ span:nth-last-child(3) {
+    opacity: 0;
+    transform: rotate(0deg) scale(0.2, 0.2);
+}
+ 
+#menuToggle input:checked ~ span:nth-last-child(2) {
+    transform: rotate(-45deg) translate(0, -1px);
+}
+
+#menu {
+    position: absolute;
+    height: 100vh;
+    width: 300px;
+    margin: -100px 0 0 -50px;
+    padding: 50px;
+    padding-top: 125px;
+
+    background: #ededed;
+    list-style-type: none;
+    -webkit-font-smoothing: antialiased;
+
+    transform-origin: 0% 0%;
+    transform: translate(-100%, 0);
+
+    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+}
+ 
+#menu li {
+    padding: 10px 0;
+    font-size: 22px;
+}
+
+#menuToggle input:checked ~ ul {
+    transform: none;
+}
+
+.svg_txt {
+    display: block;
+    position: fixed;
+    stroke: #0ed1c1;
+    font-weight: 700;
+    stroke-width: 5;
+    z-index: -1;
+    animation: textAnimate 2.5s 1 alternate;
+}
+
+.text_top {
+    stroke: #39FF14;
+    font-size: 200px;
+    animation: move_up 2s ease-out 1 forwards, textAnimate 1.2s ease-in 2.8 alternate;
+}
+
+.text_bottom {
+    opacity: 0%;
+    font-size: 150px;
+    animation: move_down 2s ease-out 0.5s 1 forwards, textAnimate 2.5s 0.5s 2.8 alternate;
+}
+
+.notes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+   
+.notes ul, .notes li{
+    list-style: none;
+    padding-right: 2rem;
+    margin-left: 5rem;
+    margin-bottom: 5rem;
+}
+
+.notepad {
+    width: 30%;
+    max-width: 100%;
+    box-shadow: 10px 10px 40px rgba(black, .15);
+    border-radius: 0 0 10px 10px;
+    overflow: hidden;
+}
+  
+.top {
+    width: 100%;
+    height: 50px;
+    padding-right: 2rem;
+    background: #333;
+    border-radius: 5px 5px 0 0;
+}
+  
+.paper {
+    width: 100%;
+    height: 100%;
+    min-height: 20vh;
+    padding: 35px 20px;
+    background: repeating-linear-gradient(#F1EDE9, #F1EDE9 31px, #94ACD4 31px, #94ACD4 32px);
+    font-family: 'Shadows Into Light', cursive;
+    color: #383b3e;
+    line-height: 32px;
+    outline: 0;
+    font-size: 22px;
+}
+
+.upcoming {
+    position: relative;
+    top: -50%;
+    text-align: center;
+    color: black;
+    background-color: black;
+    font-family: sans-serif;
+    font-size: 75px;
+    text-shadow: 4px 4px 0px #2FA4FF;
+    mix-blend-mode: screen;
+    animation: fade_in 2.5s linear forwards;
+}
+
+.bdays {
+    opacity: 0%;
+    margin-top: 2.5%;
+    margin-left: 25%;
+    list-style: disc;
+    line-height: 150%;
+    text-align: left;
+    font-family: sans-serif;
+    font-size: 28px;
+    color: #0ed1c1;
+    animation: fade_in 1s linear 0.5s forwards;
+}
+
+@keyframes textAnimate {
+    0% {
+        stroke-dasharray: 0 50%;
+        stroke-dashoffset: 20%;
+    }
+
+    100% {
+        stroke-dasharray:  50% 0;
+        stroke-dashoffset: -20%;
+    }
+}
+
+@keyframes move_up {
+    0% {
+        transform: translateY(20%);
+        opacity: 0%;
+    }
+    50% {opacity: 100%;}
+    100% {transform: translateY(0%);}
+}
+
+@keyframes move_down {
+    0% {
+        transform: translateY(-10%);
+        opacity: 0%;
+    }
+    50% {opacity: 100%;}
+
+    100% {
+        transform: translateY(0%);
+        opacity: 100%;
+    }
+}
+
+@keyframes fade_in {
+    0% {opacity: 0%;}
+    100% {opacity: 100%;}
+}

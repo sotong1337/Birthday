@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Birthdays</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'stylesheets/db_style.css') }}">
+</head>
+<body>
+
+    <nav role = "navigation">
+        <div id = "menuToggle">
+            <input type = "checkbox"/>
+            <span></span>
+            <span></span>
+            <span></span>
+            <ul id = "menu">
+                <a href = "{{ url_for('home') }}"><li>Home</li></a>
+                <a href = "{{ url_for('db_view') }}"><li>View Birthdays</li></a>
+                <a href = "{{ url_for('add_profile') }}"><li>Add Profile</li></a>
+                <a href = "{{ url_for('hw') }}"><li>Actual Homework</li></a>
+                <a href = "https://github.com/sotong1337"><li>Github</li></a>
+            </ul>
+        </div>
+    </nav>
+
+    <span class = "title">View Birthdays</span>
+
+    <table>
+        <tr class = "table_title">
+            <th>Name</th>
+            <th>Birthday</th>
+            <th>Notes</th>
+        </tr>
+        {% for i in range(n) %}
+        <tr class = "m{{ months[i] }}">
+            <td class = "name_"><a href = "/edit_data/{{ id_[i] }}">{{ names[i] }}</a></td>
+            <td>{{ days[i] }}/{{ months[i] }}</td>
+            <td class = "notes">{{ notes[i] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+<script src = "https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src = "{{ url_for('static', filename = 'db_click.js') }}"></script>
+</html>

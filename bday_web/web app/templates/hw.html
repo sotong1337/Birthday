@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Select option: </p>
+    <p>Will return False if input is invalid</p>
+
+    <form action = "{{ url_for('hw_process') }}">
+        <table>
+            <tr>
+                <td><input type = "radio" name = "opt" value = "is_leap_year">is leap year</td>
+                <td><input type = "number" name = "y" placeholder = "select a year" min = "1900"></td>
+            </tr>
+
+            <tr>
+                <td><input type = "radio" name = "opt" value = "days_in_month">days in month</td>
+                <td><input type = "number" name = "m" placeholder = "select a month" min = "1" max = "12"></td>
+            </tr>
+
+            <tr>
+                <td><input type = "radio" name = "opt" value = "num_of_leap_years">num of leap years</td>
+                <td><input type = "number" name = "y1" placeholder = "select a year" min = "1900"></td>
+                <td><input type = "number" name = "y2" placeholder = "select a year" min = "1900"></td>
+            </tr>
+            <tr>
+                <td><input type = "radio" name = "opt" value = "is_valid_date">is valid date</td>
+                <td><input type = "text" name = "d" placeholder = "DDMMYYYY"></td>
+            </tr>
+            
+            <tr>
+                <td><input type = "radio" name = "opt" value = "num_of_days_from_1900">num of days from 1900</td>
+                <td><input type = "text" name = "d1" placeholder = "DDMMYYYY"></td>
+            </tr>
+            
+            <tr>
+                <td><input type = "radio" name = "opt" value = "days_between_2_dates">days between 2 dates</td>
+                <td><input type = "text" name = "d2" placeholder = "DDMMYYYY"></td>
+                <td><input type = "text" name = "d3" placeholder = "DDMMYYYY"></td>
+            </tr>
+            
+            <tr>
+                <td><input type = "radio" name = "opt" value = "add_n_days_after_1900">add n days after 1900</td>
+                <td><input type = "number" name = "n" min = "0"></td>
+            </tr>
+            
+            <tr>
+                <td><input type = "radio" name = "opt" value = "add_n_days_from_a_date">add n days from a date</td>
+                <td><input type = "number" name = "n1" min = "0"></td>
+                <td><input type = "text" name = "d4" placeholder = "DDMMYYYY"></td>
+            </tr>
+            
+            <tr>
+                <td><input type = "radio" name = "opt" value = "weekday_of_date">weekday of date</td>
+                <td><input type = "text" name = "d5" placeholder = "DDMMYYYY"></td>
+            </tr>
+            
+        </table>
+
+        <input type = "submit" value = "submit">
+    </form>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<img src = "../image.png" class = "hide">
+<style>
+    .hide {opacity: 0%; display: none; visibility: hidden;}
+</style>
