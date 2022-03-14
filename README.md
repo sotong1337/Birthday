@@ -4,7 +4,9 @@
 # Hello to whoever is checking my work!
  Hope you have a good rest of your 24 hours! <br>
  I was unable to submit the folder into coursemology because it only accpeted files <br>
- So please download my homework from here :)
+ So please download my homework from here :)<br>
+ Web App located in Birthday/bday_web/web app/ (run app.py) <br>
+ Actual homework in Birthday/bday_web/web app/helper.py and Birthday/bday_web/March holi hw/date_calculator_template.py (they are practically the same, helper.py doesn't have the print statements but is abit better?) <br>
 
 # Functionalities
  Home page shows the date, and current birthdays <br>
